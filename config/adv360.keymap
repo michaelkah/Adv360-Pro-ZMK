@@ -50,10 +50,10 @@
     default_layer {
       bindings = <
         &kp GRAVE &kp N1      &kp N2     &kp N3     &kp N4      &kp N5    MO_TOG(MOD)                                                             MO_TOG(MOD) &kp N6    &kp N7      &kp N8     &kp N9       &kp N0         &kp MINUS
-        &none     &kp Q       &kp W      &kp E      &kp R       &kp T     &kp TAB                                                                 &kp TAB     &kp Y     &kp U       &kp I      &kp O        &kp P          &kp LBKT
-        &none     &hm LCTRL A &hm LALT S &hm LGUI D &hm LSHFT F &kp G     &kp ESC             MO_TOG(FN) MO_TOG(KEYPAD) MO_TOG(KEYPAD) MO_TOG(FN) &kp ESC     &kp H     &hm RSHFT J &hm RGUI K &hm RALT L   &hm RCTRL SEMI &kp SQT
-        &none     &kp Z       &kp X      &kp C      &kp V       &kp B                                    &kp LCTRL      &kp RCTRL                             &kp N     &kp M       &kp COMMA  &kp DOT      &kp FSLH       &none
-        &none     &kp NUBS    &kp EQUAL  &kp LEFT   &kp RIGHT                       &kp BSPC  &kp DEL    &kp LSHFT      &kp RSHFT &kp ENTER &kp SPACE                   &kp DOWN    &kp UP     &kp RBKT     &kp BSLH       &none
+        &kp BSLH  &kp Q       &kp W      &kp E      &kp R       &kp T     &kp TAB                                                                 &kp TAB     &kp Y     &kp U       &kp I      &kp O        &kp P          &kp LBKT
+        &kp EQUAL &hm LCTRL A &hm LALT S &hm LGUI D &hm LSHFT F &kp G     &kp ESC               &none          &none    &none &none               &kp ESC     &kp H     &hm RSHFT J &hm RGUI K &hm RALT L   &hm RCTRL SEMI &kp SQT
+        &kp NUBS  &kp Z       &kp X      &kp C      &kp V       &kp B                                          &none    &none                                 &kp N     &kp M       &kp COMMA  &kp DOT      &kp FSLH       &kp RBKT
+        &none     &none       &none      &none      &none                           &lt FN BSPC &lt KEYPAD DEL &none    &none &lt KEYPAD ENTER &lt FN SPACE             &none       &none      &none        &none          &none
       >;
     };
     windows {
@@ -62,34 +62,34 @@
         &trans    &trans     &trans     &trans      &trans    &trans    &trans                                                                &trans    &trans    &trans    &trans      &trans       &trans        &trans
         &trans    &hm LGUI A &trans     &hm LCTRL D &trans    &trans    &trans                 &trans &trans    &trans    &trans              &trans    &trans    &trans    &hm RCTRL K &hm LALT L   &hm RGUI SEMI &trans
         &trans    &trans     &hm RALT X &trans      &trans    &trans                                  &trans    &trans                                  &trans    &trans    &trans      &hm RALT DOT &trans        &trans
-        &trans    &trans     &trans     &trans      &trans                        &trans    &trans    &trans    &trans    &trans    &trans                        &trans    &trans      &trans       &trans        &trans
+        &trans    &trans     &trans     &trans      &trans                        &trans       &trans &trans    &trans    &trans    &trans                        &trans    &trans      &trans       &trans        &trans
       >;
     };
     fn {
       bindings = <
         &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6    &trans                                                                &trans    &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12
-        &trans    &trans    &trans    &trans    &trans    &trans    &trans                                                                &trans    &trans    &trans    &trans    &trans    &trans    &trans
-        &trans    &trans    &trans    &trans    &trans    &trans    &trans              &trans    &trans    &trans    &trans              &trans    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &trans    &trans
+        &kp SLCK  &trans    &trans    &trans    &trans    &trans    &trans                                                                &trans    &trans    &kp HOME  &kp PG_DN &kp PG_UP &kp END   &trans
+        &kp CAPS  &kp LGUI  &kp LALT  &kp LCTRL &kp LSHFT &trans    &trans              &trans    &trans    &trans    &trans              &trans    &trans    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &trans
         &trans    &trans    &trans    &trans    &trans    &trans                                  &trans    &trans                                  &trans    &trans    &trans    &trans    &trans    &trans
-        &trans    &trans    &kp CAPS  &kp HOME  &kp END                       &trans    &kp INS   &trans    &trans    &trans    &trans                        &kp PG_DN &kp PG_UP &trans    &trans    &trans
+        &trans    &trans    &trans    &trans    &trans                        &trans    &kp INS   &trans    &trans    &trans    &trans                        &trans    &trans    &trans    &trans    &trans
       >;
     };
     keypad {
       bindings = <
-        &kp GRAVE &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &trans                                                                &trans    &kp N6    &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp MINUS
-        &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T     &trans                                                                &trans    &kp Y     &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp LBKT
-        &kp ESC   &kp A     &kp S     &kp D     &kp F     &kp G     &trans              &trans    &trans    &trans    &trans              &trans    &kp H     &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &kp SQT
-        &kp LSHFT &kp Z     &kp X     &kp C     &kp V     &kp B                                   &trans    &trans                                  &kp N     &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &kp RSHFT
-        &mo FN    &kp NUBS  &kp EQUAL &kp LEFT  &kp RIGHT                     &trans    &trans    &trans    &trans    &trans    &trans                        &kp DOWN   &kp UP       &kp KP_DOT    &kp BSLH        &mo FN
+        &trans    &trans    &trans    &trans    &trans    &trans    &trans                                                                &trans    &trans    &kp KP_NUM &kp KP_DIVIDE &kp KP_MULTIPLY &kp KP_MINUS &trans
+        &trans    &trans    &trans    &trans    &trans    &trans    &trans                                                                &trans    &trans    &kp KP_N7  &kp KP_N8     &kp KP_N9       &kp KP_PLUS  &trans
+        &trans    &trans    &trans    &trans    &trans    &trans    &trans              &trans    &trans    &trans    &trans              &trans    &trans    &kp KP_N4  &kp KP_N5     &kp KP_N6       &kp KP_ENTER &trans
+        &trans    &trans    &trans    &trans    &trans    &trans                                  &trans    &trans                                  &kp KP_N0 &kp KP_N1  &kp KP_N2     &kp KP_N3       &kp KP_DOT   &trans
+        &trans    &trans    &trans    &trans    &trans                        &trans    &trans    &trans    &trans    &trans    &trans                        &trans     &trans        &trans          &trans       &trans
       >;
     };
     mod {
       bindings = <
         &none      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans                                                                                            &trans      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none
         &none      &none        &tog WINDOWS &none        &none        &none        &bootloader                                                                                       &bootloader &none        &none        &none        &none        &none        &none
-        &none      &none        &none        &none        &none        &none        &bt BT_CLR            &none     &rgb_ug RGB_MEFS_CMD 5 &rgb_ug RGB_MEFS_CMD 5 &none               &bt BT_CLR  &none        &none        &none        &none        &none        &none
+        &none      &none        &none        &none        &none        &none        &bt BT_CLR            &none     &rgb_ug RGB_MEFS_CMD 5 &rgb_ug RGB_MEFS_CMD 5 &none               &bt BT_CLR  &none        &kp C_VOL_DN &kp C_BRI_DN &kp C_BRI_UP &kp C_VOL_UP &none
         &none      &none        &none        &none        &macro_ver   &none                                        &rgb_ug RGB_TOG        &rgb_ug RGB_TOG                                        &none        &none        &none        &none        &none        &none
-        &none      &none        &none        &kp C_VOL_DN &kp C_VOL_UP                  &bl BL_INC   &bl BL_DEC     &bl BL_TOG             &bl BL_TOG             &bl BL_INC   &bl BL_DEC                      &kp C_BRI_DN &kp C_BRI_UP &none        &none        &none
+        &none      &none        &none        &none        &none                         &bl BL_INC   &bl BL_DEC     &bl BL_TOG             &bl BL_TOG             &bl BL_DEC   &bl BL_INC                      &none        &none        &none        &none        &none
       >;
     };
   };
