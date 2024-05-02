@@ -39,17 +39,22 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             bindings = <&mo>, <&tog>;
         };
     };
+
+  &lt {
+      tapping-term-ms = <150>;
+      quick-tap-ms = <150>;
+  };
 
   keymap {
     compatible = "zmk,keymap";
 
     default_layer {
       bindings = <
-        &kp GRAVE &kp N1      &kp N2     &kp N3     &kp N4      &kp N5    MO_TOG(MOD)                                                             MO_TOG(MOD) &kp N6    &kp N7      &kp N8     &kp N9       &kp N0         &kp MINUS
+        &kp GRAVE &kp N1      &kp N2     &kp N3     &kp N4      &kp N5    &mo MOD                                                                 &mo MOD     &kp N6    &kp N7      &kp N8     &kp N9       &kp N0         &kp MINUS
         &kp BSLH  &kp Q       &kp W      &kp E      &kp R       &kp T     &kp TAB                                                                 &kp TAB     &kp Y     &kp U       &kp I      &kp O        &kp P          &kp LBKT
         &kp EQUAL &hm LCTRL A &hm LALT S &hm LGUI D &hm LSHFT F &kp G     &kp ESC               &none          &none    &none &none               &kp ESC     &kp H     &hm RSHFT J &hm RGUI K &hm RALT L   &hm RCTRL SEMI &kp SQT
         &kp NUBS  &kp Z       &kp X      &kp C      &kp V       &kp B                                          &none    &none                                 &kp N     &kp M       &kp COMMA  &kp DOT      &kp FSLH       &kp RBKT
@@ -85,11 +90,11 @@
     };
     mod {
       bindings = <
-        &none      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans                                                                                            &trans      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none
-        &none      &none        &tog WINDOWS &none        &none        &none        &bootloader                                                                                       &bootloader &none        &none        &none        &none        &none        &none
-        &none      &none        &none        &none        &none        &none        &bt BT_CLR            &none     &rgb_ug RGB_MEFS_CMD 5 &rgb_ug RGB_MEFS_CMD 5 &none               &bt BT_CLR  &none        &kp C_VOL_DN &kp C_BRI_DN &kp C_BRI_UP &kp C_VOL_UP &none
-        &none      &none        &none        &none        &macro_ver   &none                                        &rgb_ug RGB_TOG        &rgb_ug RGB_TOG                                        &none        &none        &none        &none        &none        &none
-        &none      &none        &none        &none        &none                         &bl BL_INC   &bl BL_DEC     &bl BL_TOG             &bl BL_TOG             &bl BL_DEC   &bl BL_INC                      &none        &none        &none        &none        &none
+        &none      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans                                                                   &trans      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none
+        &none      &none        &tog WINDOWS &none        &none        &none        &bootloader                                                              &bootloader &none        &none        &none        &none        &none        &none
+        &none      &none        &none        &none        &none        &none        &bt BT_CLR                 &none &none    &none &none                    &bt BT_CLR  &none        &kp C_VOL_DN &kp C_BRI_DN &kp C_BRI_UP &kp C_VOL_UP &none
+        &none      &none        &none        &none        &macro_ver   &rgb_ug RGB_MEFS_CMD 5                        &none    &none                                      &none        &none        &none        &none        &none        &none
+        &none      &none        &none        &none        &none                                &bl BL_INC &bl BL_DEC &none    &none &rgb_ug RGB_TOG &bl BL_TOG                        &none        &none        &none        &none        &none
       >;
     };
   };
