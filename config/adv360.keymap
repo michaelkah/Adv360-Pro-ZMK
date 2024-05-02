@@ -13,8 +13,8 @@
 #define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
 
 &lt {
-    tapping-term-ms = <150>;
-    quick-tap-ms = <150>;
+    tapping-term-ms = <200>;
+    quick-tap-ms = <200>;
 };
 
 / {
@@ -46,6 +46,15 @@
             flavor = "hold-preferred";
             tapping-term-ms = <150>;
             bindings = <&mo>, <&tog>;
+        };
+    };
+
+  combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
         };
     };
 
