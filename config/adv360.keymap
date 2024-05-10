@@ -39,12 +39,21 @@
           bindings = <&kp>, <&kp>;
       };
 
+      bhm: balanced_homerow_mods {
+          compatible = "zmk,behavior-hold-tap";
+          #binding-cells = <2>;
+          tapping-term-ms = <200>;    // <---[[moderate duration]]
+          quick-tap-ms = <0>;
+          flavor = "balanced";
+          bindings = <&kp>, <&kp>;
+      };
+
       mo_tog: behavior_mo_tog {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <150>;
-            bindings = <&mo>, <&tog>;
+          compatible = "zmk,behavior-hold-tap";
+          #binding-cells = <2>;
+          flavor = "hold-preferred";
+          tapping-term-ms = <150>;
+          bindings = <&mo>, <&tog>;
         };
     };
 
@@ -90,7 +99,7 @@
       bindings = <
         &kp GRAVE  &kp N1       &kp N2      &kp N3      &kp N4       &kp N5      &none                                                                 &none    &kp N6      &kp N7       &kp N8      &kp N9      &kp N0          &kp MINUS
         &kp BSLH   &kp Q        &kp W       &kp E       &kp R        &kp T       &none                                                                 &none    &kp Y       &kp U        &kp I       &kp O       &kp P           &kp LBKT
-        &kp EQUAL  &hm LCTRL A  &hm LALT S  &hm LGUI D  &hm LSHFT F  &hm CAPS G  &none               &none        &none    &none  &none                &none    &hm CAPS H  &hm RSHFT J  &hm RGUI K  &hm RALT L  &hm RCTRL SEMI  &kp SQT
+        &kp EQUAL  &bhm LCTRL A  &bhm LALT S  &bhm LGUI D  &bhm LSHFT F  &bhm CAPS G  &none               &none        &none    &none  &none                &none    &bhm CAPS H  &bhm RSHFT J  &bhm RGUI K  &bhm RALT L  &bhm RCTRL SEMI  &kp SQT
         &kp NUBS   &kp Z        &kp X       &kp C       &kp V        &kp B                                        &none    &none                                &kp N       &kp M        &kp COMMA   &kp DOT     &kp FSLH        &kp RBKT
         &none      &none        &none       &none       &none                          &lt FUN BSPC  &lt NUM DEL  &none    &none  &lt NUM ENTER  &lt FUN SPACE              &none        &none       &none       &none           &none
       >;
@@ -99,8 +108,8 @@
       bindings = <
         &trans    &trans      &trans      &trans       &trans    &trans    &trans                                              &trans    &trans    &trans    &trans       &trans        &trans         &trans
         &trans    &trans      &trans      &trans       &trans    &trans    &trans                                              &trans    &trans    &trans    &trans       &trans        &trans         &trans
-        &trans    &hm LGUI A  &trans      &hm LCTRL D  &trans    &trans    &trans        &trans &trans    &trans &trans        &trans    &trans    &trans    &hm RCTRL K  &hm LALT L    &hm RGUI SEMI  &trans
-        &trans    &trans      &hm RALT X  &trans       &trans    &trans                         &trans    &trans                         &trans    &trans    &trans       &hm RALT DOT  &trans         &trans
+        &trans    &bhm LGUI A  &trans      &bhm LCTRL D  &trans    &trans    &trans        &trans &trans    &trans &trans        &trans    &trans    &trans    &bhm RCTRL K  &bhm LALT L    &bhm RGUI SEMI  &trans
+        &trans    &trans      &bhm RALT X  &trans       &trans    &trans                         &trans    &trans                         &trans    &trans    &trans       &bhm RALT DOT  &trans         &trans
         &trans    &trans      &trans      &trans       &trans                     &trans &trans &trans    &trans &trans &trans                     &trans    &trans       &trans        &trans         &trans
       >;
     };
@@ -108,7 +117,7 @@
       bindings = <
         &trans    &trans        &trans       &trans       &trans        &trans        &trans                                              &trans    &trans    &trans          &trans         &trans       &trans           &trans
         &kp SLCK  &kp F1        &kp F2       &kp F3       &kp F4        &kp F5        &trans                                              &trans    &trans    &kp HOME        &kp PG_DN      &kp PG_UP    &kp END          &trans
-        &kp INS   &hm LCTRL F6  &hm LALT F7  &hm LGUI F8  &hm LSHFT F9  &hm CAPS F10  &trans        &trans &trans    &trans &trans        &trans    &kp CAPS  &hm RSHFT LEFT  &hm RGUI DOWN  &hm RALT UP  &hm RCTRL RIGHT  &trans
+        &kp INS   &bhm LCTRL F6  &bhm LALT F7  &bhm LGUI F8  &bhm LSHFT F9  &bhm CAPS F10  &trans        &trans &trans    &trans &trans        &trans    &kp CAPS  &bhm RSHFT LEFT  &bhm RGUI DOWN  &bhm RALT UP  &bhm RCTRL RIGHT  &trans
         &trans    &kp F11       &kp F12      &shfttab     &kp TAB       &trans                             &trans    &trans                         &trans    &kp TAB         &shfttab       &trans       &trans           &trans
         &trans    &trans        &trans       &trans       &trans                             &trans &trans &trans    &trans &trans &trans                     &trans          &trans         &trans       &trans           &trans
       >;
@@ -117,7 +126,7 @@
       bindings = <
         &trans    &trans        &trans       &trans       &trans        &trans       &trans                                              &trans    &trans     &kp KP_NUM       &kp KP_DIVIDE   &kp KP_MULTIPLY &kp KP_MINUS        &trans
         &trans    &kp N1        &kp N2       &kp N3       &kp N4        &kp N5       &trans                                              &trans    &trans     &kp KP_N7        &kp KP_N8       &kp KP_N9       &kp KP_PLUS         &trans
-        &trans    &hm LCTRL N6  &hm LALT N7  &hm LGUI N8  &hm LSHFT N9  &hm CAPS N0  &trans        &trans &trans    &trans &trans        &trans    &kp CAPS   &hm RSHFT KP_N4  &hm RGUI KP_N5  &hm RALT KP_N6  &hm RCTRL KP_ENTER  &trans
+        &trans    &bhm LCTRL N6  &bhm LALT N7  &bhm LGUI N8  &bhm LSHFT N9  &bhm CAPS N0  &trans        &trans &trans    &trans &trans        &trans    &kp CAPS   &bhm RSHFT KP_N4  &bhm RGUI KP_N5  &bhm RALT KP_N6  &bhm RCTRL KP_ENTER  &trans
         &trans    &trans        &trans       &trans       &trans        &trans                            &trans    &trans                         &kp KP_N0  &kp KP_N1        &kp KP_N2       &kp KP_N3       &kp KP_DOT          &trans
         &trans    &trans        &trans       &trans       &trans                            &trans &trans &trans    &trans &trans &trans                      &trans           &trans          &trans          &trans              &trans
       >;
