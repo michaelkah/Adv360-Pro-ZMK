@@ -97,10 +97,10 @@
 
     default_layer {
       bindings = <
-        &kp GRAVE  &none        &none       &none       &none        &none       &none                                                                 &none    &none       &none        &none       &none       &none           &kp MINUS
-        &kp BSLH   &kp Q        &kp W       &kp E       &kp R        &kp T       &none                                                                 &none    &kp Y       &kp U        &kp I       &kp O       &kp P           &kp LBKT
-        &kp EQUAL  &bhm LCTRL A &bhm LALT S &bhm LGUI D &bhm LSHFT F &bhm CAPS G &none               &none        &none    &none  &none                &none    &bhm CAPS H &bhm RSHFT J &bhm RGUI K &bhm RALT L &bhm RCTRL SEMI &kp SQT
-        &kp NUBS   &kp Z        &kp X       &kp C       &kp V        &kp B                                        &none    &none                                &kp N       &kp M        &kp COMMA   &kp DOT     &kp FSLH        &kp RBKT
+        &none      &none        &none       &none       &none        &none       &none                                                                 &none    &none       &none        &none       &none       &none           &none
+        &none      &kp Q        &kp W       &kp E       &kp R        &kp T       &none                                                                 &none    &kp Y       &kp U        &kp I       &kp O       &kp P           &none
+        &none      &bhm LCTRL A &bhm LALT S &bhm LGUI D &bhm LSHFT F &bhm CAPS G &none               &none        &none    &none  &none                &none    &bhm CAPS H &bhm RSHFT J &bhm RGUI K &bhm RALT L &bhm RCTRL SEMI &none
+        &none      &kp Z        &kp X       &kp C       &kp V        &kp B                                        &none    &none                                &kp N       &kp M        &kp MINUS   &kp LBKT    &kp SQT         &none
         &none      &none        &none       &none       &none                          &lt FUN BSPC  &lt NUM TAB  &none    &none  &lt NUM ENTER  &lt FUN SPACE              &none        &none       &none       &none           &none
       >;
     };
@@ -125,9 +125,9 @@
     num {
       bindings = <
         &trans    &trans        &trans       &trans       &trans        &trans       &trans                                              &trans    &trans     &trans           &trans          &trans          &trans              &trans
-        &trans    &kp N1        &kp N2       &kp N3       &kp N4        &kp N5       &trans                                              &trans    &trans     &kp X            &kp X           &kp X           &kp X               &trans
-        &trans    &bhm LCTRL N6 &bhm LALT N7 &bhm LGUI N8 &bhm LSHFT N9 &bhm CAPS N0 &trans        &trans &trans    &trans &trans        &trans    &kp CAPS   &bhm RSHFT X     &bhm RGUI X     &bhm RALT X     &bhm RCTRL X        &trans
-        &trans    &trans        &trans       &trans       &trans        &trans                            &trans    &trans                         &kp X      &kp X            &kp X           &kp X           &kp X               &trans
+        &trans    &kp N1        &kp N2       &kp N3       &kp N4        &kp N5       &trans                                              &trans    &trans     &kp GRAVE        &kp EQUAL       &kp RBKT        &kp BSLH            &trans
+        &trans    &bhm LCTRL N6 &bhm LALT N7 &bhm LGUI N8 &bhm LSHFT N9 &bhm CAPS N0 &trans        &trans &trans    &trans &trans        &trans    &kp CAPS   &bhm RSHFT NUBS  &bhm RGUI COMMA &bhm RALT DOT   &bhm RCTRL FSLH     &trans
+        &trans    &trans        &trans       &trans       &trans        &trans                            &trans    &trans                         &trans     &trans           &trans          &trans          &trans              &trans
         &trans    &trans        &trans       &trans       &trans                            &trans &trans &trans    &trans &trans &trans                      &trans           &trans          &trans          &trans              &trans
       >;
     };
