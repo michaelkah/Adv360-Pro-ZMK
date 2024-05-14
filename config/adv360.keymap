@@ -67,16 +67,16 @@
 
   combos {
         compatible = "zmk,combos";
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <15 16>;
-            bindings = <&kp ESC>;
-        };
         combo_bt_clr {
             timeout-ms = <50>;
             key-positions = <15 16>;
             layers = <MOD>;
             bindings = <&bt BT_CLR>;
+        };
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <15 16>;
+            bindings = <&kp ESC>;
         };
     };
 
