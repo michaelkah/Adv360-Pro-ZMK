@@ -106,11 +106,11 @@
     };
     win {
       bindings = <
-        &trans    &trans      &trans      &trans       &trans    &trans    &trans                                              &trans    &trans    &trans    &trans       &trans        &trans         &trans
-        &trans    &trans      &trans      &trans       &trans    &trans    &trans                                              &trans    &trans    &trans    &trans       &trans        &trans         &trans
-        &trans    &bhm LGUI A &trans      &bhm LCTRL D &trans    &trans    &trans        &trans &trans    &trans &trans        &trans    &trans    &trans    &bhm RCTRL K &bhm LALT L   &bhm RGUI SEMI &trans
-        &trans    &trans      &bhm RALT X &trans       &trans    &trans                         &trans    &trans                         &trans    &trans    &trans       &bhm RALT DOT &trans         &trans
-        &trans    &trans      &trans      &trans       &trans                     &trans &trans &trans    &trans &trans &trans                     &trans    &trans       &trans        &trans         &trans
+        &trans    &trans      &trans      &trans       &trans    &trans    &trans                                              &trans    &trans    &trans    &trans       &trans         &trans         &trans
+        &trans    &trans      &trans      &trans       &trans    &trans    &trans                                              &trans    &trans    &trans    &trans       &trans         &trans         &trans
+        &trans    &bhm LGUI A &trans      &bhm LCTRL D &trans    &trans    &trans        &trans &trans    &trans &trans        &trans    &trans    &trans    &bhm RCTRL K &bhm LALT L    &bhm RGUI SEMI &trans
+        &trans    &trans      &bhm RALT X &trans       &trans    &trans                         &trans    &trans                         &trans    &trans    &trans       &bhm RALT LBKT &trans         &trans
+        &trans    &trans      &trans      &trans       &trans                     &trans &trans &trans    &trans &trans &trans                     &trans    &trans       &trans         &trans         &trans
       >;
     };
     fun {
