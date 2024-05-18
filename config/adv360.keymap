@@ -46,7 +46,7 @@
       bhm: balanced_homerow_mods {
           compatible = "zmk,behavior-hold-tap";
           #binding-cells = <2>;
-          tapping-term-ms = <200>;    // <---[[moderate duration]]
+          tapping-term-ms = <150>;    // <---[[moderate duration]]
           quick-tap-ms = <0>;
           flavor = "balanced";
           bindings = <&kp>, <&kp>;
@@ -132,11 +132,11 @@
     };
     num {
       bindings = <
-        &trans    &trans        &trans       &trans       &trans        &trans       &trans                                              &trans    &trans     &trans           &trans          &trans          &trans              &trans
-        &trans    &kp N1        &kp N2       &kp N3       &kp N4        &kp N5       &trans                                              &trans    &trans     &kp GRAVE        &kp EQUAL       &kp RBKT        &kp BSLH            &trans
-        &trans    &bhm LCTRL N6 &bhm LALT N7 &bhm LGUI N8 &bhm LSHFT N9 &bhm CAPS N0 &trans        &trans &trans    &trans &trans        &trans    &kp CAPS   &bhm RSHFT NUBS  &bhm RGUI COMMA &bhm RALT DOT   &bhm RCTRL FSLH     &trans
-        &trans    &trans        &trans       &trans       &trans        &trans                            &trans    &trans                         &trans     &trans           &trans          &trans          &trans              &trans
-        &trans    &trans        &trans       &trans       &trans                            &trans &trans &trans    &trans &trans &trans                      &trans           &trans          &trans          &trans              &trans
+        &none     &none         &none        &none        &none         &none        &none                                               &none     &none      &none            &none           &none           &none               &none 
+        &none     &kp N1        &kp N2       &kp N3       &kp N4        &kp N5       &none                                               &none     &none      &kp GRAVE        &kp EQUAL       &kp RBKT        &kp BSLH            &none 
+        &none     &bhm LCTRL N6 &bhm LALT N7 &bhm LGUI N8 &bhm LSHFT N9 &bhm CAPS N0 &none         &none  &none     &none  &none         &none     &kp CAPS   &bhm RSHFT NUBS  &bhm RGUI COMMA &bhm RALT DOT   &bhm RCTRL FSLH     &none 
+        &none     &none         &none        &none        &none         &none                             &none     &none                          &none      &none            &none           &none           &none               &none 
+        &none     &none         &none        &none        &none                             &none  &none  &none     &none  &none  &none                       &none            &none           &none           &none               &none 
       >;
     };
     numwin {
@@ -150,11 +150,11 @@
     };
     fun {
       bindings = <
-        &trans    &trans        &trans       &trans       &trans        &trans        &trans                                              &trans    &trans       &trans          &trans         &trans       &trans           &trans
-        &trans    &kp F1        &kp F2       &kp F3       &kp F4        &kp F5        &trans                                              &trans    &kp KP_NLCK  &kp HOME        &kp PG_DN      &kp PG_UP    &kp END          &trans
-        &trans    &bhm LCTRL F6 &bhm LALT F7 &bhm LGUI F8 &bhm LSHFT F9 &bhm CAPS F10 &trans        &trans &trans    &trans &trans        &trans    &kp CAPS     &bhm RSHFT LEFT &bhm RGUI DOWN &bhm RALT UP &bhm RCTRL RIGHT &trans
-        &trans    &kp F11       &kp F12      &trans       &trans        &trans                             &trans    &trans                         &kp SLCK     &kp DEL         &kp INS        &kp PSCRN    &kp PAUSE_BREAK  &trans
-        &trans    &trans        &trans       &trans       &trans                             &trans &trans &trans    &trans &trans &trans                        &trans          &trans         &trans       &trans           &trans
+        &none     &none         &none        &none        &none         &none         &none                                               &none     &none        &none           &none          &none        &none            &none 
+        &none     &kp F1        &kp F2       &kp F3       &kp F4        &kp F5        &none                                               &none     &kp KP_NLCK  &kp HOME        &kp PG_DN      &kp PG_UP    &kp END          &none 
+        &none     &bhm LCTRL F6 &bhm LALT F7 &bhm LGUI F8 &bhm LSHFT F9 &bhm CAPS F10 &none         &none  &none     &none  &none         &none     &kp CAPS     &bhm RSHFT LEFT &bhm RGUI DOWN &bhm RALT UP &bhm RCTRL RIGHT &none 
+        &none     &kp F11       &kp F12      &none        &none         &none                              &none     &none                          &kp SLCK     &kp DEL         &kp INS        &kp PSCRN    &kp PAUSE_BREAK  &none 
+        &none     &none         &none        &none        &none                              &none  &none  &none     &none  &none  &none                         &none           &none          &none        &none            &none 
       >;
     };
     funwin {
