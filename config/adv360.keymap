@@ -136,7 +136,7 @@
         &none     &kp N1        &kp N2       &kp N3       &kp N4        &kp N5       &none                                               &none     &none      &none            &none           &none           &none               &none 
         &none     &bhm LCTRL N6 &bhm LALT N7 &bhm LGUI N8 &bhm LSHFT N9 &bhm CAPS N0 &none         &none  &none     &none  &none         &none     &kp CAPS   &bhm RSHFT GRAVE &bhm RGUI EQUAL &bhm RALT RBKT  &bhm RCTRL BSLH     &none 
         &none     &none         &none        &none        &none         &none                             &none     &none                          &none      &kp NUBS         &kp COMMA       &kp DOT         &kp FSLH            &none 
-        &none     &none         &none        &none        &none                             &none  &none  &none     &none  &none  &none                       &none            &none           &none           &none               &none 
+        &none     &none         &none        &none        &none                             &trans &trans &trans    &trans &trans &trans                      &none            &none           &none           &none               &none 
       >;
     };
     numwin {
@@ -154,7 +154,7 @@
         &none     &kp F1        &kp F2       &kp F3       &kp F4        &kp F5        &none                                               &none     &kp KP_NLCK  &kp HOME        &kp PG_DN      &kp PG_UP    &kp END          &none 
         &none     &bhm LCTRL F6 &bhm LALT F7 &bhm LGUI F8 &bhm LSHFT F9 &bhm CAPS F10 &none         &none  &none     &none  &none         &none     &kp CAPS     &bhm RSHFT LEFT &bhm RGUI DOWN &bhm RALT UP &bhm RCTRL RIGHT &none 
         &none     &kp F11       &kp F12      &none        &none         &none                              &none     &none                          &kp SLCK     &kp DEL         &kp INS        &kp PSCRN    &kp PAUSE_BREAK  &none 
-        &none     &none         &none        &none        &none                              &none  &none  &none     &none  &none  &none                         &none           &none          &none        &none            &none 
+        &none     &none         &none        &none        &none                              &trans &trans &trans    &trans &trans &trans                        &none           &none          &none        &none            &none 
       >;
     };
     funwin {
@@ -168,11 +168,11 @@
     };
     mod {
       bindings = <
-        &bootloader &none           &none        &none        &none           &none        &none                                              &none       &none                  &none           &none        &none        &none        &bootloader
-        &none       &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3    &bt BT_SEL 4 &none                                              &none       &rgb_ug RGB_MEFS_CMD 5 &rgb_ug RGB_TOG &bl BL_TOG   &bl BL_INC   &bl BL_DEC   &none
-        &none       &kp LCTRL       &kp LALT     &kp LGUI     &kp LSHFT       &kp CAPS     &none         &none  &none    &none  &none         &none       &kp C_MUTE             &kp C_VOL_DN    &kp C_BRI_DN &kp C_BRI_UP &kp C_VOL_UP &none
-        &none       &none           &none        &none        &none           &tog DEFWIN                       &none    &none                            &kp C_PP               &kp C_PREV      &kp C_NEXT   &none        &none        &none
-        &none       &none           &none        &none        &none                               &none  &none  &none    &none  &none  &none                                     &none           &none        &none        &none        &none
+        &bootloader &none           &none        &none        &none           &none        &none                                               &none       &none                  &none           &none        &none        &none        &bootloader
+        &none       &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3    &bt BT_SEL 4 &none                                               &none       &rgb_ug RGB_MEFS_CMD 5 &rgb_ug RGB_TOG &bl BL_TOG   &bl BL_INC   &bl BL_DEC   &none
+        &none       &kp LCTRL       &kp LALT     &kp LGUI     &kp LSHFT       &kp CAPS     &none         &none  &none     &none  &none         &none       &kp C_MUTE             &kp C_VOL_DN    &kp C_BRI_DN &kp C_BRI_UP &kp C_VOL_UP &none
+        &none       &none           &none        &none        &none           &tog DEFWIN                       &none     &none                            &kp C_PP               &kp C_PREV      &kp C_NEXT   &none        &none        &none
+        &none       &none           &none        &none        &none                               &trans &trans &trans    &trans &trans &trans                                    &none           &none        &none        &none        &none
       >;
     };
     modwin {
