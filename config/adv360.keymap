@@ -133,9 +133,9 @@
     num {
       bindings = <
         &none     &none         &none        &none        &none         &none        &none                                               &none     &none      &none            &none           &none           &none               &none 
-        &none     &kp N1        &kp N2       &kp N3       &kp N4        &kp N5       &none                                               &none     &none      &kp GRAVE        &kp EQUAL       &kp RBKT        &kp BSLH            &none 
-        &none     &bhm LCTRL N6 &bhm LALT N7 &bhm LGUI N8 &bhm LSHFT N9 &bhm CAPS N0 &none         &none  &none     &none  &none         &none     &kp CAPS   &bhm RSHFT NUBS  &bhm RGUI COMMA &bhm RALT DOT   &bhm RCTRL FSLH     &none 
-        &none     &none         &none        &none        &none         &none                             &none     &none                          &none      &none            &none           &none           &none               &none 
+        &none     &kp N1        &kp N2       &kp N3       &kp N4        &kp N5       &none                                               &none     &none      &none            &none           &none           &none               &none 
+        &none     &bhm LCTRL N6 &bhm LALT N7 &bhm LGUI N8 &bhm LSHFT N9 &bhm CAPS N0 &none         &none  &none     &none  &none         &none     &kp CAPS   &bhm RSHFT GRAVE &bhm RGUI EQUAL &bhm RALT RBKT  &bhm RCTRL BSLH     &none 
+        &none     &none         &none        &none        &none         &none                             &none     &none                          &none      &kp NUBS         &kp COMMA       &kp DOT         &kp FSLH            &none 
         &none     &none         &none        &none        &none                             &none  &none  &none     &none  &none  &none                       &none            &none           &none           &none               &none 
       >;
     };
@@ -143,8 +143,8 @@
       bindings = <
         &trans    &trans       &trans      &trans        &trans    &trans    &trans                                              &trans    &trans    &trans    &trans           &trans         &trans         &trans
         &trans    &trans       &trans      &trans        &trans    &trans    &trans                                              &trans    &trans    &trans    &trans           &trans         &trans         &trans
-        &trans    &bhm LGUI N6 &trans      &bhm LCTRL N8 &trans    &trans    &trans        &trans &trans    &trans &trans        &trans    &trans    &trans    &bhm RCTRL COMMA &bhm LALT DOT  &bhm RGUI FSLH &trans
-        &trans    &trans       &kp RALT    &trans        &trans    &trans                         &trans    &trans                         &trans    &trans    &trans           &kp RALT       &trans         &trans
+        &trans    &bhm LGUI N6 &trans      &bhm LCTRL N8 &trans    &trans    &trans        &trans &trans    &trans &trans        &trans    &trans    &trans    &bhm RCTRL EQUAL &bhm LALT RBKT &bhm RGUI BSLH &trans
+        &trans    &trans       &kp RALT    &trans        &trans    &trans                         &trans    &trans                         &trans    &trans    &trans           &bhm RALT DOT  &trans         &trans
         &trans    &trans       &trans      &trans        &trans                     &trans &trans &trans    &trans &trans &trans                     &trans    &trans           &trans         &trans         &trans
       >;
     };
