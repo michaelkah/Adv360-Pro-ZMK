@@ -13,8 +13,6 @@
 #define MOD 6
 #define MODWIN 7
 
-#define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
-
 &lt {
     tapping-term-ms = <150>;
     quick-tap-ms = <250>;
@@ -22,44 +20,26 @@
 
 / {
     behaviors {
-      #include "macros.dtsi"
-      #include "version.dtsi"
-      #ifndef VERSION_MACRO
-      macro_ver: macro_ver {
-        compatible = "zmk,behavior-macro";
-        label = "macro_version";
-        #binding-cells = <0>;
-        bindings = <&kp RET>;
-      };
-      #endif
-
-      hm: homerow_mods {
+      l_p: left_positional_hold_tap {
           compatible = "zmk,behavior-hold-tap";
-          label = "HOMEROW_MODS";
           #binding-cells = <2>;
-          tapping-term-ms = <150>;
-          quick_tap_ms = <0>;
-          flavor = "tap-preferred";
+          flavor = "tap-unless-interrupted";
+          tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+          quick-tap-ms = <200>;
           bindings = <&kp>, <&kp>;
-      };
-
-      bhm: balanced_homerow_mods {
-          compatible = "zmk,behavior-hold-tap";
-          #binding-cells = <2>;
-          tapping-term-ms = <150>;    // <---[[moderate duration]]
-          quick-tap-ms = <0>;
-          flavor = "balanced";
-          bindings = <&kp>, <&kp>;
-      };
-
-      mo_tog: behavior_mo_tog {
-          compatible = "zmk,behavior-hold-tap";
-          #binding-cells = <2>;
-          flavor = "hold-preferred";
-          tapping-term-ms = <150>;
-          bindings = <&mo>, <&tog>;
+          hold-trigger-key-positions = <7 8 9 10 11 12 13 21 22 23 24 25 26 27 37 38 39 40 41 42 43 44 45 53 54 55 56 57 58 59 68 69 70 71 72 73 74 75>;    // <---[[right-hand keys]]
         };
-    };
+
+      r_p: left_positional_hold_tap {
+          compatible = "zmk,behavior-hold-tap";
+          #binding-cells = <2>;
+          flavor = "tap-unless-interrupted";
+          tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+          quick-tap-ms = <200>;
+          bindings = <&kp>, <&kp>;
+          hold-trigger-key-positions = <0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 34 35 36 46 47 48 49 50 51 52 60 61 62 63 64 65 66 67>;    // <---[[left-hand keys]]
+        };
+};
 
   conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -97,18 +77,6 @@
         };
     };
 
-  macros {
-        shfttab: shfttab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT>
-                , <&macro_tap &kp TAB>
-                , <&macro_release &kp LSHFT>
-                ;
-        };
-    };
-
   keymap {
     compatible = "zmk,keymap";
 
@@ -116,7 +84,7 @@
       bindings = <
         &none      &none        &none       &none       &none        &none       &none                                                                 &none    &none       &none        &none       &none       &none           &none
         &none      &kp Q        &kp W       &kp E       &kp R        &kp T       &none                                                                 &none    &kp Y       &kp U        &kp I       &kp O       &kp P           &none
-        &none      &bhm LCTRL A &bhm LALT S &bhm LGUI D &bhm LSHFT F &bhm CAPS G &none               &none        &none    &none  &none                &none    &bhm CAPS H &bhm RSHFT J &bhm RGUI K &bhm RALT L &bhm RCTRL SEMI &none
+        &none      &l_p LCTRL A &l_p LALT S &l_p LGUI D &l_p LSHFT F &l_p CAPS G &none               &none        &none    &none  &none                &none    &r_p CAPS H &r_p RSHFT J &r_p RGUI K &r_p RALT L &r_p RCTRL SEMI &none
         &none      &kp Z        &kp X       &kp C       &kp V        &kp B                                        &none    &none                                &kp N       &kp M        &kp MINUS   &kp LBKT    &kp SQT         &none
         &none      &none        &none       &none       &none                          &lt NUM BSPC  &lt FUN TAB  &none    &none  &lt FUN ENTER  &lt NUM SPACE              &none        &none       &none       &none           &none
       >;
@@ -125,8 +93,8 @@
       bindings = <
         &trans    &trans      &trans      &trans       &trans    &trans    &trans                                              &trans    &trans    &trans    &trans       &trans         &trans         &trans
         &trans    &trans      &trans      &trans       &trans    &trans    &trans                                              &trans    &trans    &trans    &trans       &trans         &trans         &trans
-        &trans    &bhm LGUI A &trans      &bhm LCTRL D &trans    &trans    &trans        &trans &trans    &trans &trans        &trans    &trans    &trans    &bhm RCTRL K &bhm LALT L    &bhm RGUI SEMI &trans
-        &trans    &trans      &bhm RALT X &trans       &trans    &trans                         &trans    &trans                         &trans    &trans    &trans       &bhm RALT LBKT &trans         &trans
+        &trans    &l_p LGUI A &trans      &l_p LCTRL D &trans    &trans    &trans        &trans &trans    &trans &trans        &trans    &trans    &trans    &r_p RCTRL K &r_p LALT L    &r_p RGUI SEMI &trans
+        &trans    &trans      &l_p RALT X &trans       &trans    &trans                         &trans    &trans                         &trans    &trans    &trans       &r_p RALT LBKT &trans         &trans
         &trans    &trans      &trans      &trans       &trans                     &trans &trans &trans    &trans &trans &trans                     &trans    &trans       &trans         &trans         &trans
       >;
     };
@@ -134,7 +102,7 @@
       bindings = <
         &none     &none         &none        &none        &none         &none        &none                                               &none     &none      &none            &none           &none           &none               &none 
         &none     &kp N1        &kp N2       &kp N3       &kp N4        &kp N5       &none                                               &none     &none      &none            &none           &none           &none               &none 
-        &none     &bhm LCTRL N6 &bhm LALT N7 &bhm LGUI N8 &bhm LSHFT N9 &bhm CAPS N0 &none         &none  &none     &none  &none         &none     &kp CAPS   &bhm RSHFT GRAVE &bhm RGUI EQUAL &bhm RALT RBKT  &bhm RCTRL BSLH     &none 
+        &none     &l_p LCTRL N6 &l_p LALT N7 &l_p LGUI N8 &l_p LSHFT N9 &l_p CAPS N0 &none         &none  &none     &none  &none         &none     &kp CAPS   &r_p RSHFT GRAVE &r_p RGUI EQUAL &r_p RALT RBKT  &r_p RCTRL BSLH     &none 
         &none     &none         &none        &none        &none         &none                             &none     &none                          &none      &kp NUBS         &kp COMMA       &kp DOT         &kp FSLH            &none 
         &none     &none         &none        &none        &none                             &trans &trans &trans    &trans &trans &trans                      &none            &none           &none           &none               &none 
       >;
@@ -143,8 +111,8 @@
       bindings = <
         &trans    &trans       &trans      &trans        &trans    &trans    &trans                                              &trans    &trans    &trans    &trans           &trans         &trans         &trans
         &trans    &trans       &trans      &trans        &trans    &trans    &trans                                              &trans    &trans    &trans    &trans           &trans         &trans         &trans
-        &trans    &bhm LGUI N6 &trans      &bhm LCTRL N8 &trans    &trans    &trans        &trans &trans    &trans &trans        &trans    &trans    &trans    &bhm RCTRL EQUAL &bhm LALT RBKT &bhm RGUI BSLH &trans
-        &trans    &trans       &kp RALT    &trans        &trans    &trans                         &trans    &trans                         &trans    &trans    &trans           &bhm RALT DOT  &trans         &trans
+        &trans    &l_p LGUI N6 &trans      &l_p LCTRL N8 &trans    &trans    &trans        &trans &trans    &trans &trans        &trans    &trans    &trans    &r_p RCTRL EQUAL &r_p LALT RBKT &r_p RGUI BSLH &trans
+        &trans    &trans       &kp RALT    &trans        &trans    &trans                         &trans    &trans                         &trans    &trans    &trans           &r_p RALT DOT  &trans         &trans
         &trans    &trans       &trans      &trans        &trans                     &trans &trans &trans    &trans &trans &trans                     &trans    &trans           &trans         &trans         &trans
       >;
     };
@@ -152,7 +120,7 @@
       bindings = <
         &none     &none         &none        &none        &none         &none         &none                                               &none     &none        &none           &none          &none        &none            &none 
         &none     &kp F1        &kp F2       &kp F3       &kp F4        &kp F5        &none                                               &none     &kp KP_NLCK  &kp HOME        &kp PG_DN      &kp PG_UP    &kp END          &none 
-        &none     &bhm LCTRL F6 &bhm LALT F7 &bhm LGUI F8 &bhm LSHFT F9 &bhm CAPS F10 &none         &none  &none     &none  &none         &none     &kp CAPS     &bhm RSHFT LEFT &bhm RGUI DOWN &bhm RALT UP &bhm RCTRL RIGHT &none 
+        &none     &l_p LCTRL F6 &l_p LALT F7 &l_p LGUI F8 &l_p LSHFT F9 &l_p CAPS F10 &none         &none  &none     &none  &none         &none     &kp CAPS     &r_p RSHFT LEFT &r_p RGUI DOWN &r_p RALT UP &r_p RCTRL RIGHT &none 
         &none     &kp F11       &kp F12      &none        &none         &none                              &none     &none                          &kp SLCK     &kp DEL         &kp INS        &kp PSCRN    &kp PAUSE_BREAK  &none 
         &none     &none         &none        &none        &none                              &trans &trans &trans    &trans &trans &trans                        &none           &none          &none        &none            &none 
       >;
@@ -161,8 +129,8 @@
       bindings = <
         &trans    &trans       &trans        &trans        &trans    &trans    &trans                                              &trans    &trans    &trans    &trans          &trans          &trans          &trans
         &trans    &trans       &trans        &trans        &trans    &trans    &trans                                              &trans    &trans    &trans    &trans          &trans          &trans          &trans
-        &trans    &bhm LGUI F6 &trans        &bhm LCTRL F8 &trans    &trans    &trans        &trans &trans    &trans &trans        &trans    &trans    &trans    &bhm RCTRL DOWN &bhm LALT UP    &bhm RGUI RIGHT &trans
-        &trans    &trans       &bhm RALT F12 &trans        &trans    &trans                         &trans    &trans                         &trans    &trans    &trans          &bhm RALT PSCRN &trans          &trans
+        &trans    &l_p LGUI F6 &trans        &l_p LCTRL F8 &trans    &trans    &trans        &trans &trans    &trans &trans        &trans    &trans    &trans    &r_p RCTRL DOWN &r_p LALT UP    &r_p RGUI RIGHT &trans
+        &trans    &trans       &l_p RALT F12 &trans        &trans    &trans                         &trans    &trans                         &trans    &trans    &trans          &r_p RALT PSCRN &trans          &trans
         &trans    &trans       &trans        &trans        &trans                     &trans &trans &trans    &trans &trans &trans                     &trans    &trans          &trans          &trans          &trans
       >;
     };
