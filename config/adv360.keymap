@@ -63,12 +63,6 @@
 
   combos {
         compatible = "zmk,combos";
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <15 16>;
-            layers = <DEF DEFWIN NUM NUMWIN FUN FUNWIN>;
-            bindings = <&kp ESC>;
-        };
         combo_bt_clr {
             timeout-ms = <50>;
             key-positions = <15 16>;
@@ -93,35 +87,35 @@
       bindings = <
         &trans    &trans      &trans      &trans       &trans    &trans    &trans                                              &trans    &trans    &trans    &trans       &trans         &trans         &trans
         &trans    &trans      &trans      &trans       &trans    &trans    &trans                                              &trans    &trans    &trans    &trans       &trans         &trans         &trans
-        &trans    &l_p LGUI A &trans      &l_p LCTRL D &trans    &trans    &trans        &trans &trans    &trans &trans        &trans    &trans    &trans    &r_p RCTRL K &r_p LALT L    &r_p RGUI SEMI &trans
+        &trans    &l_p LGUI A &trans      &l_p LCTRL D &trans    &kp G     &trans        &trans &trans    &trans &trans        &trans    &kp H     &trans    &r_p RCTRL K &r_p LALT L    &r_p RGUI SEMI &trans
         &trans    &trans      &l_p RALT X &trans       &trans    &trans                         &trans    &trans                         &trans    &trans    &trans       &r_p RALT LBKT &trans         &trans
         &trans    &trans      &trans      &trans       &trans                     &trans &trans &trans    &trans &trans &trans                     &trans    &trans       &trans         &trans         &trans
       >;
     };
     num {
       bindings = <
-        &none     &none         &none        &none        &none         &none        &none                                               &none     &none      &none            &none           &none           &none               &none 
-        &none     &kp N1        &kp N2       &kp N3       &kp N4        &kp N5       &none                                               &none     &none      &none            &none           &none           &none               &none 
-        &none     &l_p LCTRL N6 &l_p LALT N7 &l_p LGUI N8 &l_p LSHFT N9 &l_p CAPS N0 &none         &none  &none     &none  &none         &none     &kp CAPS   &r_p RSHFT GRAVE &r_p RGUI EQUAL &r_p RALT RBKT  &r_p RCTRL BSLH     &none 
-        &none     &none         &none        &none        &none         &none                             &none     &none                          &none      &kp NUBS         &kp COMMA       &kp DOT         &kp FSLH            &none 
-        &none     &none         &none        &none        &none                             &trans &trans &trans    &trans &trans &trans                      &none            &none           &none           &none               &none 
+        &none     &none         &none        &none        &none         &none         &none                                               &none     &none      &none            &none           &none           &none               &none 
+        &none     &none         &kp N7       &kp N8       &kp N9        &kp COMMA     &none                                               &none     &none      &none            &none           &none           &none               &none 
+        &none     &kp LCTRL     &l_p LALT N4 &l_p LGUI N5 &l_p LSHFT N6 &l_p CAPS DOT &none         &none  &none     &none  &none         &none     &kp CAPS   &r_p RSHFT GRAVE &r_p RGUI EQUAL &r_p RALT RBKT  &r_p RCTRL BSLH     &none 
+        &none     &none         &kp N1       &kp N2       &kp N3        &kp N0                             &none     &none                          &none      &kp NUBS         &kp COMMA       &kp DOT         &kp FSLH            &none 
+        &none     &none         &none        &none        &none                              &trans &trans &trans    &trans &trans &trans                      &none            &none           &none           &none               &none 
       >;
     };
     numwin {
       bindings = <
-        &trans    &trans       &trans      &trans        &trans    &trans    &trans                                              &trans    &trans    &trans    &trans           &trans         &trans         &trans
-        &trans    &trans       &trans      &trans        &trans    &trans    &trans                                              &trans    &trans    &trans    &trans           &trans         &trans         &trans
-        &trans    &l_p LGUI N6 &trans      &l_p LCTRL N8 &trans    &trans    &trans        &trans &trans    &trans &trans        &trans    &trans    &trans    &r_p RCTRL EQUAL &r_p LALT RBKT &r_p RGUI BSLH &trans
-        &trans    &trans       &kp RALT    &trans        &trans    &trans                         &trans    &trans                         &trans    &trans    &trans           &r_p RALT DOT  &trans         &trans
-        &trans    &trans       &trans      &trans        &trans                     &trans &trans &trans    &trans &trans &trans                     &trans    &trans           &trans         &trans         &trans
+        &trans    &trans       &trans       &trans        &trans    &trans    &trans                                              &trans    &trans    &trans    &trans           &trans         &trans         &trans
+        &trans    &trans       &trans       &trans        &trans    &trans    &trans                                              &trans    &trans    &trans    &trans           &trans         &trans         &trans
+        &trans    &kp LGUI     &trans       &l_p LCTRL N5 &trans    &kp DOT   &trans        &trans &trans    &trans &trans        &trans    &none     &trans    &r_p RCTRL EQUAL &r_p LALT RBKT &r_p RGUI BSLH &trans
+        &trans    &trans       &l_p RALT N1 &trans        &trans    &trans                         &trans    &trans                         &trans    &trans    &trans           &r_p RALT DOT  &trans         &trans
+        &trans    &trans       &trans       &trans        &trans                     &trans &trans &trans    &trans &trans &trans                     &trans    &trans           &trans         &trans         &trans
       >;
     };
     fun {
       bindings = <
         &none     &none         &none        &none        &none         &none         &none                                               &none     &none        &none           &none          &none        &none            &none 
-        &none     &kp F1        &kp F2       &kp F3       &kp F4        &kp F5        &none                                               &none     &kp KP_NLCK  &kp HOME        &kp PG_DN      &kp PG_UP    &kp END          &none 
-        &none     &l_p LCTRL F6 &l_p LALT F7 &l_p LGUI F8 &l_p LSHFT F9 &l_p CAPS F10 &none         &none  &none     &none  &none         &none     &kp CAPS     &r_p RSHFT LEFT &r_p RGUI DOWN &r_p RALT UP &r_p RCTRL RIGHT &none 
-        &none     &kp F11       &kp F12      &none        &none         &none                              &none     &none                          &kp SLCK     &kp DEL         &kp INS        &kp PSCRN    &kp PAUSE_BREAK  &none 
+        &none     &kp ESC       &kp F7       &kp F8       &kp F9        &kp F12       &none                                               &none     &kp KP_NLCK  &kp HOME        &kp PG_DN      &kp PG_UP    &kp END          &none 
+        &none     &kp LCTRL     &l_p LALT F4 &l_p LGUI F5 &l_p LSHFT F6 &l_p CAPS F11 &none         &none  &none     &none  &none         &none     &kp CAPS     &r_p RSHFT LEFT &r_p RGUI DOWN &r_p RALT UP &r_p RCTRL RIGHT &none 
+        &none     &none         &kp F1       &kp F2       &kp F3        &kp F10                            &none     &none                          &kp SLCK     &kp DEL         &kp INS        &kp PSCRN    &kp PAUSE_BREAK  &none 
         &none     &none         &none        &none        &none                              &trans &trans &trans    &trans &trans &trans                        &none           &none          &none        &none            &none 
       >;
     };
@@ -129,8 +123,8 @@
       bindings = <
         &trans    &trans       &trans        &trans        &trans    &trans    &trans                                              &trans    &trans    &trans    &trans          &trans          &trans          &trans
         &trans    &trans       &trans        &trans        &trans    &trans    &trans                                              &trans    &trans    &trans    &trans          &trans          &trans          &trans
-        &trans    &l_p LGUI F6 &trans        &l_p LCTRL F8 &trans    &trans    &trans        &trans &trans    &trans &trans        &trans    &trans    &trans    &r_p RCTRL DOWN &r_p LALT UP    &r_p RGUI RIGHT &trans
-        &trans    &trans       &l_p RALT F12 &trans        &trans    &trans                         &trans    &trans                         &trans    &trans    &trans          &r_p RALT PSCRN &trans          &trans
+        &trans    &kp LGUI     &trans        &l_p LCTRL F5 &trans    &kp F11   &trans        &trans &trans    &trans &trans        &trans    &trans    &trans    &r_p RCTRL DOWN &r_p LALT UP    &r_p RGUI RIGHT &trans
+        &trans    &trans       &l_p RALT F1  &trans        &trans    &trans                         &trans    &trans                         &trans    &trans    &trans          &r_p RALT PSCRN &trans          &trans
         &trans    &trans       &trans        &trans        &trans                     &trans &trans &trans    &trans &trans &trans                     &trans    &trans          &trans          &trans          &trans
       >;
     };
