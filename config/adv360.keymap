@@ -2,7 +2,9 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/stp.h>
 #include <dt-bindings/zmk/backlight.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define DEF 0
 #define DEFWIN 1
@@ -25,6 +27,19 @@
 
 / {
     behaviors {
+      #include "macros.dtsi"
+      #include "version.dtsi"
+
+      hm: homerow_mods {
+          compatible = "zmk,behavior-hold-tap";
+          label = "HOMEROW_MODS";
+          #binding-cells = <2>;
+          tapping-term-ms = <200>;
+          quick_tap_ms = <175>;
+          flavor = "tap-preferred";
+          bindings = <&kp>, <&kp>;
+      };
+
       l_p: left_positional_hold_tap {
           compatible = "zmk,behavior-hold-tap";
           #binding-cells = <2>;
@@ -84,6 +99,7 @@
     compatible = "zmk,keymap";
 
     default_layer {
+      display-name = "Base";
       bindings = <
         &none      &none        &none       &none       &none        &none       &none                                                                 &none    &none       &none        &none       &none       &none           &none
         &none      &kp Q        &kp W       &kp E       &kp R        &kp T       &none                                                                 &none    &kp Y       &kp U        &kp I       &kp O       &kp P           &none
@@ -102,12 +118,13 @@
       >;
     };
     num {
+      display-name = "Kp";
       bindings = <
-        &none     &none         &none        &none        &none         &none         &none                                               &none     &none      &none            &none           &none           &none               &none 
-        &none     &none         &kp N7       &kp N8       &kp N9        &kp COMMA     &none                                               &none     &none      &none            &none           &none           &none               &none 
-        &none     &kp LCTRL     &l_p LALT N4 &l_p LGUI N5 &l_p LSHFT N6 &l_p CAPS DOT &none         &none  &none     &none  &none         &none     &kp CAPS   &r_p RSHFT GRAVE &r_p RGUI EQUAL &r_p RALT RBKT  &r_p RCTRL BSLH     &none 
-        &none     &none         &kp N1       &kp N2       &kp N3        &kp N0                             &none     &none                          &none      &kp NUBS         &kp COMMA       &kp DOT         &kp FSLH            &none 
-        &none     &none         &none        &none        &none                              &trans &trans &trans    &trans &trans &trans                      &none            &none           &none           &none               &none 
+        &none     &none         &none        &none        &none         &none         &none                                               &none     &none      &none            &none           &none           &none               &none
+        &none     &none         &kp N7       &kp N8       &kp N9        &kp COMMA     &none                                               &none     &none      &none            &none           &none           &none               &none
+        &none     &kp LCTRL     &l_p LALT N4 &l_p LGUI N5 &l_p LSHFT N6 &l_p CAPS DOT &none         &none  &none     &none  &none         &none     &kp CAPS   &r_p RSHFT GRAVE &r_p RGUI EQUAL &r_p RALT RBKT  &r_p RCTRL BSLH     &none
+        &none     &none         &kp N1       &kp N2       &kp N3        &kp N0                             &none     &none                          &none      &kp NUBS         &kp COMMA       &kp DOT         &kp FSLH            &none
+        &none     &none         &none        &none        &none                              &trans &trans &trans    &trans &trans &trans                      &none            &none           &none           &none               &none
       >;
     };
     numwin {
@@ -120,12 +137,13 @@
       >;
     };
     fun {
+      display-name = "Fn";
       bindings = <
-        &none     &none         &none        &none        &none         &none         &none                                               &none     &none        &none           &none          &none        &none            &none 
-        &none     &kp ESC       &kp F7       &kp F8       &kp F9        &kp F12       &none                                               &none     &kp KP_NLCK  &kp HOME        &kp PG_DN      &kp PG_UP    &kp END          &none 
-        &none     &kp LCTRL     &l_p LALT F4 &l_p LGUI F5 &l_p LSHFT F6 &l_p CAPS F11 &none         &none  &none     &none  &none         &none     &kp CAPS     &r_p RSHFT LEFT &r_p RGUI DOWN &r_p RALT UP &r_p RCTRL RIGHT &none 
-        &none     &none         &kp F1       &kp F2       &kp F3        &kp F10                            &none     &none                          &kp SLCK     &kp DEL         &kp INS        &kp PSCRN    &kp PAUSE_BREAK  &none 
-        &none     &none         &none        &none        &none                              &trans &trans &trans    &trans &trans &trans                        &none           &none          &none        &none            &none 
+        &none     &none         &none        &none        &none         &none         &none                                               &none     &none        &none           &none          &none        &none            &none
+        &none     &kp ESC       &kp F7       &kp F8       &kp F9        &kp F12       &none                                               &none     &kp KP_NLCK  &kp HOME        &kp PG_DN      &kp PG_UP    &kp END          &none
+        &none     &kp LCTRL     &l_p LALT F4 &l_p LGUI F5 &l_p LSHFT F6 &l_p CAPS F11 &none         &none  &none     &none  &none         &none     &kp CAPS     &r_p RSHFT LEFT &r_p RGUI DOWN &r_p RALT UP &r_p RCTRL RIGHT &none
+        &none     &none         &kp F1       &kp F2       &kp F3        &kp F10                            &none     &none                          &kp SLCK     &kp DEL         &kp INS        &kp PSCRN    &kp PAUSE_BREAK  &none
+        &none     &none         &none        &none        &none                              &trans &trans &trans    &trans &trans &trans                        &none           &none          &none        &none            &none
       >;
     };
     funwin {
@@ -138,6 +156,7 @@
       >;
     };
     mod {
+      display-name = "Mod";
       bindings = <
         &bootloader &none           &none        &none        &none           &none        &none                                               &none       &none                  &none           &none        &none        &none        &bootloader
         &none       &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3    &bt BT_SEL 4 &none                                               &none       &rgb_ug RGB_MEFS_CMD 5 &rgb_ug RGB_TOG &bl BL_TOG   &bl BL_INC   &bl BL_DEC   &none
@@ -163,6 +182,25 @@
         &none    &tog GAM   &none      &kp LCTRL   &none    &none                                &none    &none                       &none    &none    &none       &none         &none         &none
         &none    &none      &none      &none       &none                     &kp LSHFT &kp SPACE &none    &none &none &none                    &none    &none       &none         &none         &none
       >;
+    };
+    extra1 {
+      display-name = "Red";
+      status = "reserved";
+    };
+
+    extra2 {
+      display-name = "Purple";
+      status = "reserved";
+    };
+
+    extra3 {
+      display-name = "Cyan";
+      status = "reserved";
+    };
+
+    extra4 {
+      display-name = "Yellow";
+      status = "reserved";
     };
   };
 };
